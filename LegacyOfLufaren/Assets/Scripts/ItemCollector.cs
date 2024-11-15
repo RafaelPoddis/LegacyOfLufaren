@@ -22,7 +22,7 @@ public class ItemCollector : MonoBehaviour
                 if (coin != null)
                 {
                     // Move cada moeada para o player
-                    coin.transform.position = Vector3.MoveTowards(coin.transform.position, transform.position, 2f * Time.deltaTime);
+                    coin.transform.position = Vector3.MoveTowards(coin.transform.position, transform.position, 2.7f * Time.deltaTime);
 
                     // Verifica se a moeda chegou no jogador
                     if(Vector3.Distance(coin.transform.position, transform.position) < 0.1f)
