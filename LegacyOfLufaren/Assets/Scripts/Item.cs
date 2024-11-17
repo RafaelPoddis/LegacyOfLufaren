@@ -1,31 +1,28 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField] private static Text coinsText;
+    [SerializeField] private TextMeshProUGUI coinsText; // TextMeshProUGUI para textos na UI
     private static int coinsCount = 0;
+
     void Start()
     {
+        // Se coinsText não foi atribuído no Inspector, busca automaticamente
         if (coinsText == null)
         {
-            coinsText = GameObject.Find("Coins").GetComponent<Text>();
+            coinsText = GameObject.Find("COINS").GetComponent<TextMeshProUGUI>();
             UpdateCoinsText();
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            coinsCount++;
-            UpdateCoinsText();
-            Destroy(gameObject);
+            coinsCount++; // Incrementa o contador de moedas
+            UpdateCoinsText(); // Atualiza o texto
+            Destroy(gameObject); // Destroi o objeto (moeda)
         }
     }
 
@@ -33,7 +30,7 @@ public class Item : MonoBehaviour
     {
         if (coinsText != null)
         {
-            coinsText.text = "Coins: " + coinsCount;
+            coinsText.text = "COINS " + coinsCount; // Atualiza o texto na UI
         }
     }
 }
