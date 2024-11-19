@@ -1,4 +1,3 @@
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,13 +5,16 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pause;
     [SerializeField] GameObject settings;
+    [SerializeField] GameObject inventory;
+
     private bool isPaused = false;
-    // private bool inSettings = false;
+    private bool inventoryOpen = false;
 
     void Start()
     {
         pause.SetActive(false);
         settings.SetActive(false);
+        inventory.SetActive(false);
     }
 
     void Update()
@@ -27,6 +29,11 @@ public class PauseMenu : MonoBehaviour
             {
                 PauseGame();
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.I))
+        {
+            Inventory();
         }
     }
 
@@ -66,5 +73,21 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void Inventory()
+    {
+        if (inventoryOpen)
+        {
+            Time.timeScale = 1f;
+            inventoryOpen = false;
+            inventory.SetActive(false);
+        }
+        else
+        {
+            inventoryOpen = true;
+            Time.timeScale = 0f;
+            inventory.SetActive(true);
+        }
     }
 }
