@@ -3,7 +3,7 @@ RPG de ação com elementos rogue-like.
 
 Action RPG with rogue-like elements.
 
-Rsumo:
+Resumo:
 
 Era uma vez um mundo chamado Lufarèn, um grande mundo com terras, povos e culturas de todos os tipos. Um reino com povoados ricos e pobres, um reino com tudo de bom mas também cheio de pecados. Um reino de equilíbrio.
 A família real está a gerações incontáveis controlando o reino, não se sabe como eles conseguem trazer tanto equilíbrio para terras tão expansivas, mas esse é exatamente o que mantém eles no trono sem nenhuma revolta relevante.
